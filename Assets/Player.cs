@@ -6,5 +6,4 @@ public class Player : Entity
 {
     [Header("Swiping")]
     public int Accepts = 2;
-    public int Denies = 2;
 }

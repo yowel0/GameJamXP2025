@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 
@@ -11,7 +13,7 @@ public class CardManager : MonoBehaviour
     [SerializeField]
     Card cardPrefab;
     [SerializeField]
-    List<CardSO> cards;
+    public List<CardSO> cards;
 
     Player player;
 
@@ -22,6 +24,7 @@ public class CardManager : MonoBehaviour
             activeCard = FindAnyObjectByType<Card>();
         }
         player = FindAnyObjectByType<Player>();
+        ReshuffleCards();
         SpawnNextCard();
     }
 
@@ -34,7 +37,7 @@ public class CardManager : MonoBehaviour
     }
 
     public void SpawnNextCard(){
-        if (cards.Count <= 0 || player.Accepts <= 0){
+        if (cards.Count <= 0){
             battleManager.StartBattle();
             return;
         }
@@ -45,5 +48,17 @@ public class CardManager : MonoBehaviour
     void SpawnCard(CardSO _cardSO){
         activeCard = Instantiate(cardPrefab);
         activeCard.cardSO = _cardSO;
+    }
+
+    public void ReshuffleCards(){
+        print("reshulffel");
+        List<CardSO> allCards = Resources.LoadAll<CardSO>("Cards").ToList();
+        cards = new List<CardSO>();
+        for (int i = allCards.Count - 1; i >= 0; i--){
+            int randInt = Random.Range(0,allCards.Count);
+            print(randInt);
+            cards.Add(allCards[randInt]);
+            allCards.RemoveAt(randInt);
+        }
     }
 }

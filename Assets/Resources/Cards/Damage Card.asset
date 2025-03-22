@@ -15,5 +15,5 @@ MonoBehaviour:
   cardName: Damage Card
   sprite: {fileID: 21300000, guid: 9d92c4e435fc7124192f83c3714aabef, type: 3}
   health: 0
-  damage: 10
+  damage: 2
   speed: 0

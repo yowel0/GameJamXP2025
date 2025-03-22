@@ -48,10 +48,7 @@ public class Card : MonoBehaviour
     }
 
     public void Deny(){
-        if (player.Denies > 0){
-            player.Denies--;
-            Destroy(gameObject);
-        }
+        Destroy(gameObject);
     }
 
     void SetValues(CardSO _cardSO){

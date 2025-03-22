@@ -8,7 +8,9 @@ public class UIHandler : MonoBehaviour
 {
     CardManager cardManager;
     [SerializeField]
-    TextMeshProUGUI text;
+    TextMeshProUGUI handsText;
+    [SerializeField]
+    TextMeshProUGUI cardsLeftText;
     Player player;
     // Start is called before the first frame update
     void Start()
@@ -32,6 +34,7 @@ public class UIHandler : MonoBehaviour
     }
 
     void SetText(){
-        text.text = player.Denies + "                          " + player.Accepts;
+        handsText.text = player.Accepts.ToString();
+        cardsLeftText.text = "Cards Left: " + (cardManager.cards.Count + 1);
     }
 }
