@@ -34,7 +34,7 @@ public class UIHandler : MonoBehaviour
     }
 
     void SetText(){
-        handsText.text = player.Accepts.ToString();
+        handsText.text = player.accepts.ToString();
         cardsLeftText.text = "Cards Left: " + (cardManager.cards.Count + 1);
     }
 }

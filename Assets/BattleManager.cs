@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class BattleManager : MonoBehaviour
@@ -21,6 +23,10 @@ public class BattleManager : MonoBehaviour
     Button replayButton;
     bool battleOngoing = false;
     float timer = 0;
+    bool playerTurn = false;
+
+    [SerializeField]
+    UnityEvent OnWin = new UnityEvent();
     // Start is called before the first frame update
     void Start()
     {
@@ -37,33 +43,70 @@ public class BattleManager : MonoBehaviour
             activeEnemy.gameObject.SetActive(false);
         }
         else{
-            activeEnemy.gameObject.SetActive(true);
-            timer += Time.deltaTime;
-            float attacksInterval = 1/player.speed;
-            if (timer/attacksInterval > playerAttackedCount){
-                playerAttackedCount++;
-                player.AttackEntity(activeEnemy);
-                print(timer/attacksInterval + " " + playerAttackedCount);
-            }
-            attacksInterval = 1/activeEnemy.speed;
-            if (timer/attacksInterval > enemyAttackedCount){
-                enemyAttackedCount++;
-                activeEnemy.AttackEntity(player);
-                print(timer/attacksInterval + " " + enemyAttackedCount);
-            }
-            if (activeEnemy.health <= 0){
-                Destroy(activeEnemy.gameObject);
-                StopBattle();
-            }
-            if (player.health <= 0){
-                Destroy(player.gameObject);
-                StopBattle();
-            }
+            BattleStep();
+            // BattleStepOLD();
             //enemy.AttackEntity(player);
+            CheckDeath();
+        }
+    }
+
+    void BattleStep(){
+        activeEnemy.gameObject.SetActive(true);
+        timer += Time.deltaTime;
+        if (timer > 1.0){
+            timer -= 1.0f;
+            NextAttack();
+        }
+    }
+    void BattleStepOLD(){
+        activeEnemy.gameObject.SetActive(true);
+        timer += Time.deltaTime;
+        float attacksInterval = 1/player.speed;
+        if (timer/attacksInterval > playerAttackedCount){
+            PlayerAttack();
+        }
+        attacksInterval = 1/activeEnemy.speed;
+        if (timer/attacksInterval > enemyAttackedCount){
+            EnemyAttack();
+        }
+    }
+    void NextAttack(){
+        if (playerTurn){
+            PlayerAttack();
+        }
+        else{
+            EnemyAttack();
+        }
+        playerTurn = !playerTurn;
+    }
+    void PlayerAttack(){
+        playerAttackedCount++;
+        player.AttackEntity(activeEnemy);
+    }
+    void EnemyAttack(){
+        enemyAttackedCount++;
+        activeEnemy.AttackEntity(player);
+    }
+    void CheckDeath(){
+        if (activeEnemy.health <= 0){
+            Destroy(activeEnemy.gameObject);
+            StopBattle();
+            OnWin?.Invoke();
+        }
+        if (player.health <= 0){
+            Destroy(player.gameObject);
+            StopBattle();
+            SceneManager.LoadScene("Lose Scene");
         }
     }
 
     public void StartBattle(){
+        if (player.speed >= activeEnemy.speed){
+            playerTurn = true;
+        }
+        else{
+            playerTurn = false;
+        }
         battleOngoing = true;
         timer = 0;
         foreach (var gObj in toEnable){

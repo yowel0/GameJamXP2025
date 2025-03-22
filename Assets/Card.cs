@@ -38,8 +38,8 @@ public class Card : MonoBehaviour
     }
 
     public void Accept(){
-        if (player.Accepts > 0){
-            player.Accepts--;
+        if (player.accepts > 0){
+            player.accepts--;
             player.AddHealth(cardSO.health);
             player.AddDamage(cardSO.damage);
             player.AddSpeed(cardSO.speed);

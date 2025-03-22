@@ -156,7 +156,7 @@ MonoBehaviour:
   maxHealth: 6
   health: 10
   damage: 1
-  speed: 0.6
+  speed: 1.2
   onAttack:
     m_PersistentCalls:
       m_Calls:
