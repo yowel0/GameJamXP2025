@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b05861a29c9e224d8383a899bc44da0, type: 3}
+  m_Name: Health Card
+  m_EditorClassIdentifier: 
+  cardName: HealthCard
+  sprite: {fileID: 21300000, guid: ef835a957cd1d6f4c94920b9bfb80395, type: 3}
+  health: 10
+  damage: 0
+  speed: 0
