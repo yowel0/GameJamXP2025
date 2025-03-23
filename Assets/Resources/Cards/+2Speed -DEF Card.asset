@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b05861a29c9e224d8383a899bc44da0, type: 3}
   m_Name: +2Speed -DEF Card
   m_EditorClassIdentifier: 
-  cardName: 
-  sprite: {fileID: 0}
-  description: 
+  cardName: Tammie
+  sprite: {fileID: 21300000, guid: 62f94c0a6512bcd498ffe12c05b47e03, type: 3}
+  description: +2 Speed -1 Defense
   health: 0
   defense: -1
   damage: 0

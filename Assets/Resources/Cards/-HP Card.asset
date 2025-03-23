@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b05861a29c9e224d8383a899bc44da0, type: 3}
   m_Name: -HP Card
   m_EditorClassIdentifier: 
-  cardName: 
+  cardName: Lucy
   sprite: {fileID: 21300000, guid: 098617d91d4b764449c8928bf1e9e3d4, type: 3}
-  description: 
+  description: Always in for a new adventure. Just arrived from out of town who wants
+    me? ;) -1 Health
   health: -1
   defense: 0
   damage: 0

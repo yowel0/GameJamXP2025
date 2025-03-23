@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b05861a29c9e224d8383a899bc44da0, type: 3}
   m_Name: +Speed +ATT
   m_EditorClassIdentifier: 
-  cardName: 
-  sprite: {fileID: 0}
-  description: 
+  cardName: Christine
+  sprite: {fileID: 21300000, guid: 62f94c0a6512bcd498ffe12c05b47e03, type: 3}
+  description: I love to hang around the house and watch a movie on Netflix. I love
+    people who can cook ;) +1 Speed +1 Attack
   health: 0
   defense: 0
   damage: 1
