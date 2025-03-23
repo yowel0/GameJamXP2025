@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+// using Microsoft.Unity.VisualStudio.Editor;
 using TMPro;
 using UnityEditor.Timeline.Actions;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
+using UnityEngine.UI;
 
 public class CardManager : MonoBehaviour
 {
@@ -21,6 +23,15 @@ public class CardManager : MonoBehaviour
     TextMeshProUGUI nameText;
     [SerializeField]
     TextMeshProUGUI descriptionText;
+
+    [SerializeField]
+    Image Damage;
+    [SerializeField]
+    Image Defense;
+    [SerializeField]
+    Image Health;
+    [SerializeField]
+    Image Speed;
 
     void OnEnable()
     {
@@ -65,6 +76,7 @@ public class CardManager : MonoBehaviour
         nameText.text = activeCard.cardSO.cardName;
         descriptionText.text = activeCard.cardSO.description;
         cards.RemoveAt(0);
+        SetStatsUI();
     }
 
     void SpawnCard(CardSO _cardSO){
@@ -81,6 +93,38 @@ public class CardManager : MonoBehaviour
             print(randInt);
             cards.Add(allCards[randInt]);
             allCards.RemoveAt(randInt);
+        }
+    }
+
+    void SetStatsUI(){
+        if (!Damage)
+            return;
+        if (activeCard.cardSO.damage > 0){
+            Damage.color = new Color(1,1,1,1f);
+        }
+        else{
+            Damage.color = new Color(1,1,1,0.5f);
+        }
+
+        if (activeCard.cardSO.defense > 0){
+            Defense.color = new Color(1,1,1,1f);
+        }
+        else{
+            Defense.color = new Color(1,1,1,0.5f);
+        }
+
+        if (activeCard.cardSO.health > 0){
+            Health.color = new Color(1,1,1,1f);
+        }
+        else{
+            Health.color = new Color(1,1,1,0.5f);
+        }
+
+        if (activeCard.cardSO.speed > 0){
+            Speed.color = new Color(1,1,1,1f);
+        }
+        else{
+            Speed.color = new Color(1,1,1,0.5f);
         }
     }
 }

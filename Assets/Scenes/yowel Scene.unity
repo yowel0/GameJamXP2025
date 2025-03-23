@@ -839,7 +839,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handsText: {fileID: 1461805500}
-  cardsLeftText: {fileID: 956731904}
+  cardsLeftText: {fileID: 0}
 --- !u!1 &891763046
 GameObject:
   m_ObjectHideFlags: 0
@@ -1602,6 +1602,10 @@ MonoBehaviour:
   cards: []
   nameText: {fileID: 997673748}
   descriptionText: {fileID: 331886974}
+  Damage: {fileID: 0}
+  Defense: {fileID: 0}
+  Health: {fileID: 0}
+  Speed: {fileID: 0}
 --- !u!1 &1427638724
 GameObject:
   m_ObjectHideFlags: 0
