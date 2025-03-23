@@ -12,10 +12,12 @@ public class Entity : MonoBehaviour
     public int maxHealth = 10;
     [HideInInspector]
     public int health;
+    public int defense = 0;
     public int damage = 1;
     public float speed = 1;
 
     private int _maxHealth;
+    private int _defense;
     private int _damage;
     private float _speed;
     
@@ -28,7 +30,11 @@ public class Entity : MonoBehaviour
     }
 
     public void Hit(int _amount){
-        health -= _amount;
+        int damage = _amount - defense;
+        if (damage < 1){
+            damage = 1;
+        }
+        health -= damage;
     }
 
     public void AttackEntity(Entity _entity){
@@ -41,6 +47,10 @@ public class Entity : MonoBehaviour
         health += _amount;
     }
 
+    public void AddDefense(int _amount){
+        defense += _amount;
+    }
+
     public void AddDamage(int _amount){
         damage += _amount;
     }
@@ -51,6 +61,7 @@ public class Entity : MonoBehaviour
 
     public virtual void SaveValues(){
         _maxHealth = maxHealth;
+        _defense = defense;
         _damage = damage;
         _speed = speed;
     }
@@ -58,6 +69,7 @@ public class Entity : MonoBehaviour
     public virtual void ResetValues(){
         maxHealth = _maxHealth;
         health = maxHealth;
+        defense = _defense;
         damage = _damage;
         speed = _speed;
     }

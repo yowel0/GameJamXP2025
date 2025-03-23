@@ -9,6 +9,7 @@ public class CardSO : ScriptableObject
     public Sprite sprite;
     public string description;
     public int health;
+    public int defense;
     public int damage;
     public int speed;
 

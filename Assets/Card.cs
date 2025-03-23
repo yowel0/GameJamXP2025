@@ -41,6 +41,7 @@ public class Card : MonoBehaviour
         if (player.accepts > 0){
             player.accepts--;
             player.AddHealth(cardSO.health);
+            player.AddDefense(cardSO.defense);
             player.AddDamage(cardSO.damage);
             player.AddSpeed(cardSO.speed);
             Destroy(gameObject);
