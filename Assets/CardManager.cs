@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using TMPro;
+using UnityEditor.Timeline.Actions;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 
@@ -15,7 +17,26 @@ public class CardManager : MonoBehaviour
     [SerializeField]
     public List<CardSO> cards;
 
-    Player player;
+    [SerializeField]
+    TextMeshProUGUI nameText;
+    [SerializeField]
+    TextMeshProUGUI descriptionText;
+
+    void OnEnable()
+    {
+        if (nameText != null)
+            nameText.gameObject.SetActive(true);
+        if (descriptionText != null)
+            descriptionText.gameObject.SetActive(true);
+    }
+
+    void OnDisable()
+    {
+        if (nameText != null)
+            nameText.gameObject.SetActive(false);
+        if (descriptionText != null)
+            descriptionText.gameObject.SetActive(false);
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +44,6 @@ public class CardManager : MonoBehaviour
         if (activeCard == null){
             activeCard = FindAnyObjectByType<Card>();
         }
-        player = FindAnyObjectByType<Player>();
         ReshuffleCards();
         SpawnNextCard();
     }
@@ -42,6 +62,8 @@ public class CardManager : MonoBehaviour
             return;
         }
         SpawnCard(cards[0]);
+        nameText.text = activeCard.cardSO.cardName;
+        descriptionText.text = activeCard.cardSO.description;
         cards.RemoveAt(0);
     }
 
