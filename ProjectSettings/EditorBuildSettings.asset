@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Lose Scene.unity
     guid: 85a7549d4415c6f4abde4e89f9d20a4b
+  - enabled: 1
+    path: Assets/Scenes/Daan scene.unity
+    guid: c52ace5665326be4e90491124a7c24f2
   m_configObjects: {}
