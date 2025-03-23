@@ -10,10 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b05861a29c9e224d8383a899bc44da0, type: 3}
-  m_Name: Succubus Card
+  m_Name: +Speed +ATT
   m_EditorClassIdentifier: 
-  cardName: Succubus
-  sprite: {fileID: 21300000, guid: 858d7b9f304f7d54596140661d02548c, type: 3}
-  health: -1
-  damage: 2
-  speed: 2
+  cardName: 
+  sprite: {fileID: 0}
+  description: 
+  health: 0
+  defense: 0
+  damage: 1
+  speed: 1

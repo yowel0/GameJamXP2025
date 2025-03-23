@@ -914,8 +914,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 2, y: 2}
-  m_AnchoredPosition: {x: -627, y: -2263}
-  m_SizeDelta: {x: -1460, y: -3390}
+  m_AnchoredPosition: {x: -627, y: -890}
+  m_SizeDelta: {x: -1460, y: -3353.15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &450233593
 MonoBehaviour:
@@ -1998,8 +1998,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 2, y: 2}
-  m_AnchoredPosition: {x: -983.6667, y: -2263}
-  m_SizeDelta: {x: -1460, y: -3390}
+  m_AnchoredPosition: {x: -983.6667, y: -890}
+  m_SizeDelta: {x: -1460, y: -3353.15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1049173662
 MonoBehaviour:
@@ -2965,6 +2965,8 @@ MonoBehaviour:
     type: 3}
   cards:
   - {fileID: 11400000, guid: 2e96a34c2125f7447b61d5177d92f859, type: 2}
+  nameText: {fileID: 419268604}
+  descriptionText: {fileID: 618084967}
 --- !u!1 &1394273944
 GameObject:
   m_ObjectHideFlags: 0
@@ -3366,6 +3368,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 5
   health: 10
+  defense: 0
   damage: 1
   speed: 1
   onAttack:
@@ -3395,7 +3398,7 @@ MonoBehaviour:
           m_StringArgument: Attack
           m_BoolArgument: 0
         m_CallState: 2
-  accepts: 2
+  accepts: 5
 --- !u!4 &1580067521
 Transform:
   m_ObjectHideFlags: 0
