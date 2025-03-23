@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b05861a29c9e224d8383a899bc44da0, type: 3}
   m_Name: +DEF -HP Card
   m_EditorClassIdentifier: 
-  cardName: 
-  sprite: {fileID: 0}
-  description: 
+  cardName: Sarah
+  sprite: {fileID: 21300000, guid: 992b7f49e41e5594ea99b3d4d2921ae9, type: 3}
+  description: +1 Defense -1 Health
   health: -1
   defense: 1
   damage: 0

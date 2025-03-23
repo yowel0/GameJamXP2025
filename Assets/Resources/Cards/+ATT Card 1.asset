@@ -10,13 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b05861a29c9e224d8383a899bc44da0, type: 3}
-  m_Name: -ATT Card
+  m_Name: +ATT Card 1
   m_EditorClassIdentifier: 
-  cardName: Hellia
-  sprite: {fileID: 21300000, guid: 098617d91d4b764449c8928bf1e9e3d4, type: 3}
-  description: Always in for a new adventure. Just arrived from out of town who wants
-    me? ;) -1 Attack
+  cardName: Damage Card
+  sprite: {fileID: 21300000, guid: 7c21f5689da5ae44a8b1e8e304ba6182, type: 3}
+  description: +1 Attack
   health: 0
   defense: 0
-  damage: -1
+  damage: 1
   speed: 0

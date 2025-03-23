@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b05861a29c9e224d8383a899bc44da0, type: 3}
   m_Name: +HP -ATT Card
   m_EditorClassIdentifier: 
-  cardName: 
-  sprite: {fileID: 0}
-  description: 
+  cardName: Lilly
+  sprite: {fileID: 21300000, guid: cc42199f7352741459707cbabd28c132, type: 3}
+  description: +1 Health -1 Attack
   health: 1
   defense: 0
   damage: -1
