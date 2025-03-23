@@ -7,6 +7,7 @@ public class CardSO : ScriptableObject
 {
     public string cardName;
     public Sprite sprite;
+    public string description;
     public int health;
     public int damage;
     public int speed;
