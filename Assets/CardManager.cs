@@ -2,11 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-// using Microsoft.Unity.VisualStudio.Editor;
 using TMPro;
-using UnityEditor.Timeline.Actions;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
 
 public class CardManager : MonoBehaviour
@@ -16,6 +13,8 @@ public class CardManager : MonoBehaviour
     BattleManager battleManager;
     [SerializeField]
     Card cardPrefab;
+    [SerializeField]
+    int cardsLimit = 10;
     [SerializeField]
     public List<CardSO> cards;
 
@@ -88,7 +87,9 @@ public class CardManager : MonoBehaviour
         print("reshulffel");
         List<CardSO> allCards = Resources.LoadAll<CardSO>("Cards").ToList();
         cards = new List<CardSO>();
-        for (int i = allCards.Count - 1; i >= 0; i--){
+        if (cardsLimit > allCards.Count)
+            cardsLimit = allCards.Count;
+        for (int i = cardsLimit - 1; i >= 0; i--){
             int randInt = Random.Range(0,allCards.Count);
             print(randInt);
             cards.Add(allCards[randInt]);
